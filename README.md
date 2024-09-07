@@ -10,7 +10,4 @@ Current Learing Web Dev
 
 Eagerly looking forward to work with the team .
 
-[LinkedIn](www.linkedin.com/in/tushar-chattarki-5030bb290) 
-
- 
-
+[LinkedIn](www.linkedin.com/in/tushar-chattarki-5030bb290)
