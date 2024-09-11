@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import React from "react";
 const getHTMLContent = async (filename: string) => {
   const response = await fetch(`/html/${filename}`);
   return response.text();
@@ -38,6 +39,8 @@ const CircleOfCards: React.FC = () => {
           src="/dsaii logo.jpeg"
           alt="Center Image"
           className="w-40 h-40 rounded-full border border-gray-300 shadow-lg"
+          width={160}
+          height={160}
         />
       </div>
 
