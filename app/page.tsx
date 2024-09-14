@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-
+import Image from "next/image";
+import React from "react";
 const getHTMLContent = async (filename: string) => {
   const response = await fetch(`/html/${filename}`);
   return response.text();
@@ -18,13 +19,10 @@ const getHTMLFiles = async () => {
 
 const CircleOfCards: React.FC = () => {
   const [contents, setContents] = useState<string[]>([]);
-  const radius = 330; // Radius of the circle
-  const cardCount = 8; // Maximum number of cards
+  const radius = 330;
 
-  // Fetch HTML content on load
   useEffect(() => {
     const fetchData = async () => {
-      // Get the list of HTML files
       const filenames = await getHTMLFiles();
       const contentPromises = filenames.map((filename: string) => getHTMLContent(filename));
       const results = await Promise.all(contentPromises);
@@ -37,10 +35,12 @@ const CircleOfCards: React.FC = () => {
   return (
     <div className="relative w-full h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 flex items-center justify-center z-10">
-        <img
+        <Image
           src="/dsaii logo.jpeg"
           alt="Center Image"
           className="w-40 h-40 rounded-full border border-gray-300 shadow-lg"
+          width={160}
+          height={160}
         />
       </div>
 
